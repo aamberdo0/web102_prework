@@ -90,6 +90,7 @@ const games = ` [
   }
 ]
 `
+
 const template = `
 {
 "name": "",
