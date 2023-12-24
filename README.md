@@ -22,7 +22,7 @@ The following **optional** features are implemented:
 ## Video Walkthrough
 
 Here's a walkthrough of implemented features:
-![Uploading Kapture 2023-12-24 at 17.21.46.gif…]()
+[Uploading Kapture 2023-12-24 at 17.21.46.gif…]()
 
 
 GIF created with MacOS by Amber Do 
