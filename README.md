@@ -23,7 +23,8 @@ The following **optional** features are implemented:
 
 Here's a walkthrough of implemented features:
 
-<img src='[https://imgur.com/a/j4WwCsy]' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='[https://imgur.com/a/j4WwCsy]' title='Video Walkthrough' width='' alt='Video Walkthrough' /><a href="//imgur.com/a/j4WwCsy">github demo code</a>
+<blockquote class="imgur-embed-pub" lang="en" data-id="a/j4WwCsy"  ><a href="//imgur.com/a/j4WwCsy">github demo code</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
 
 GIF created with MacOS by Amber Do 
 
