@@ -23,8 +23,7 @@ function deleteChildElements(parent) {
 */
 
 // grab the element with the id games-container
-const gamesContainer = document.getElementById("games-container");
-let count =0; 
+const gamesContainer = document.getElementById("games-container"); 
 // create a function that adds all data from the games array to the page
 function addGamesToPage(games) {
 
@@ -95,42 +94,46 @@ gamesCard.innerHTML=`${totalGames}`
 
 // show only games that do not yet have enough funding
 function filterUnfundedOnly() {
-    deleteChildElements(gamesContainer);
-
+     deleteChildElements(gamesContainer);
+    let filterList = GAMES_JSON.filter((game)=>{
+        return game.goal > game.pledged; 
+    });
+    addGamesToPage(filterList);
     // use filter() to get a list of games that have not yet met their goal
-
-
     // use the function we previously created to add the unfunded games to the DOM
 
 }
+filterUnfundedOnly();
 
 // show only games that are fully funded
 function filterFundedOnly() {
-    deleteChildElements(gamesContainer);
-
+   deleteChildElements(gamesContainer);
+    let filterFunded=GAMES_JSON.filter((game)=>{
+        return game.pledged >= game.goal; 
+    });
+    console.log(filterFunded.length); 
+    addGamesToPage(filterFunded); 
     // use filter() to get a list of games that have met or exceeded their goal
-
-
     // use the function we previously created to add unfunded games to the DOM
-
 }
-
+filterFundedOnly(); 
 // show all games
 function showAllGames() {
     deleteChildElements(gamesContainer);
-
+    addGamesToPage(GAMES_JSON);
     // add all games from the JSON data to the DOM
 
 }
-
+showAllGames(); 
 // select each button in the "Our Games" section
 const unfundedBtn = document.getElementById("unfunded-btn");
 const fundedBtn = document.getElementById("funded-btn");
 const allBtn = document.getElementById("all-btn");
 
 // add event listeners with the correct functions to each button
-
-
+unfundedBtn.addEventListener('click',filterUnfundedOnly);
+fundedBtn.addEventListener('click',filterFundedOnly); 
+allBtn.addEventListener('click',showAllGames); 
 /*************************************************************************************
  * Challenge 6: Add more information at the top of the page about the company.
  * Skills used: template literals, ternary operator
@@ -140,13 +143,23 @@ const allBtn = document.getElementById("all-btn");
 const descriptionContainer = document.getElementById("description-container");
 
 // use filter or reduce to count the number of unfunded games
+let numUnfundedCount=GAMES_JSON.filter((game)=>{
+    return  game.goal > game.pledged; 
+});
 
+let numFundedCount=GAMES_JSON.filter((game)=>{
+    return game.goal <= game.pledged; 
+});
 
 // create a string that explains the number of unfunded games using the ternary operator
-
+const displayString = `A total of $${totalRaised.toLocaleString("en-US")} has been raised for
+${numFundedCount.length} games. Currently, ${numUnfundedCount.length} games remains unfunded. We need
+your help to fund these amazing games!`;
 
 // create a new DOM element containing the template string and append it to the description container
-
+const newElement = document.createElement("p");
+newElement.innerHTML=`${displayString}`;
+descriptionContainer.append(newElement);
 /************************************************************************************
  * Challenge 7: Select & display the top 2 games
  * Skills used: spread operator, destructuring, template literals, sort 
@@ -159,8 +172,16 @@ const sortedGames =  GAMES_JSON.sort( (item1, item2) => {
     return item2.pledged - item1.pledged;
 });
 
+
 // use destructuring and the spread operator to grab the first and second games
+let [first,second] = sortedGames;
 
 // create a new element to hold the name of the top pledge game, then append it to the correct element
+let firstGame = document.createElement("p");
+firstGame.innerHTML=`${first.name}`;
+firstGameContainer.append(firstGame);
 
 // do the same for the runner up item
+let secondGame= document.createElement("p");
+secondGame.innerHTML=`${second.name}`;
+secondGameContainer.append(secondGame);
