@@ -22,8 +22,8 @@ The following **optional** features are implemented:
 ## Video Walkthrough
 
 Here's a walkthrough of implemented features:
-[Uploading Kapture 2023-12-24 at 17.21.46.gif…]()
 
+<img src='ffe66fc9-ad07-4af8-810d-2928968ca435.mp4' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with MacOS by Amber Do 
 
