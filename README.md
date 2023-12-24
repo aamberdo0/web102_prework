@@ -23,7 +23,7 @@ The following **optional** features are implemented:
 
 Here's a walkthrough of implemented features:
 
-<img src='[https://imgur.com/a/j4WwCsy](https://imgur.com/a/j4WwCsy)' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='![My Remote Image](https://imgur.com/a/j4WwCsy)' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with MacOS by Amber Do 
 
